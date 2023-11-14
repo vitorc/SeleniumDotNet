@@ -21,14 +21,15 @@ namespace SeleniumPoC.tests
         }
 
         [Test]
-        public void TestSwagLabs()
+        public void PrimeiraCompra()
         {
             swagLabsElements.EnterUserName("standard_user");
             swagLabsElements.EnterPassword("secret_sauce");
             swagLabsElements.ClickLoginButton();
-            swagLabsElements.SelectFirstProduct("Remove");
-
-
+            swagLabsElements.SelectFirstProduct("1");
+            swagLabsElements.AccessCartPage("29.99");
+            swagLabsElements.CheckoutProduct();
+            swagLabsElements.CompletePurchase("Nome", "Usuario", "323983", "32.39");
         }
 
         [TearDown]
